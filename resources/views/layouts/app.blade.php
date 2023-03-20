@@ -5,12 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
-    @php $currenturl = url()->current(); @endphp
-    @isset($form)
-    <link rel="stylesheet" href="{{asset("css/themeForms.css")}}">
-    @else
-    <link rel="stylesheet" href="{{asset("css/themeForms.css")}}">
-    @endisset ($form)
+    <link rel="stylesheet" href="{{asset("css/themeForms.css")}}">git add --all
 </head>
 <body>
     @yield('content')
