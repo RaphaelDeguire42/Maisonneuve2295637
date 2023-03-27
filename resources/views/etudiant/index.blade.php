@@ -5,8 +5,8 @@
 <div class="wrapper table">
     <h1 class="table__title">Liste des étudiants</h1>
     <div class="action">
-        <a href="/" type="button" class="button button--neutral">Retour</a>
-        <a href="/create-etudiant" class="button button--neutral">Ajouter un étudiant</a>
+        <a href="{{ route('etudiant.welcome') }}" type="button" class="button button--neutral">Retour</a>
+        <a href="{{ route('etudiant.create') }}" class="button button--neutral">Ajouter un étudiant</a>
     </div>
 
     <!-- Retour de succes si l'étudiant est bien supprimé -->

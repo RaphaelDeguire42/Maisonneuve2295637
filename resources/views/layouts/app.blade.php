@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="{{asset("styles/main.css")}}">
+    <link rel="stylesheet" href="{{asset("css/main.css")}}">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bentham&family=Lexend&family=Literata:opsz@7..72&family=Montserrat&family=Playfair+Display&family=Playfair+Display+SC:wght@900&family=Poppins&family=Roboto&display=swap');
 
