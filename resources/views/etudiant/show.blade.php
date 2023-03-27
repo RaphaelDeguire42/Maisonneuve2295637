@@ -13,9 +13,11 @@
         <p class="table__row">Ville: <span class="info__data">{{ $etudiant->etudiantHasVille->name}}</span></p>
     </div>
     <div class="action">
-        <a href="/etudiant" type="button" class="button button--neutral">Retour</a>
-        <a href="/edit-etudiant/{{ $etudiant->id }}" class="button">Modifier</a>
-        <a href="/delete-etudiant/{{ $etudiant->id }}" class="button button--delete">Supprimer</a>
+        <a href="{{ route('etudiant.index') }}" type="button" class="button button--neutral">Retour</a>
+        <a href="{{ route('etudiant.edit', $etudiant->id ) }}" class="button">Modifier</a>
+        <form action="{{ route('etudiant.destroy', $etudiant->id) }}" method="POST"> @csrf @method('DELETE')
+                    <button class="button button--delete" type="submit">Supprimer</button>
+        </form>
     </div>
 </div>
 

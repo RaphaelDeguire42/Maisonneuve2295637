@@ -48,7 +48,7 @@
     </div>
     <div class="form-row">
 
-        <a href="/etudiant" class="button button--neutral">Retour</a>
+        <a href="{{ route('etudiant.index') }}" class="button button--neutral">Retour</a>
         <button type="submit" class="button">Créer</button>
     </div>
 </form>
