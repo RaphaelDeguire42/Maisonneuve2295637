@@ -53,7 +53,7 @@
     </div>
     <div class="action">
         <a href="/etudiant" type="button" class="button button--neutral">Retour</a>
-        <button type="submit" class="button">Modifier</button>
+        <button type="submit" class="button">Enregistrer</button>
     </div>
 </form>
 

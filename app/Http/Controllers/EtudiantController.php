@@ -15,7 +15,7 @@ class EtudiantController extends Controller
      */
     public function index()
     {
-        $etudiants = Etudiant::all();
+        $etudiants = Etudiant::select()->paginate(7);
         return view('etudiant.index',['etudiants' => $etudiants]);
     }
 
@@ -57,8 +57,7 @@ class EtudiantController extends Controller
      */
     public function show(Etudiant $etudiant)
     {
-        $ville = Ville::findOrFail($etudiant->ville_id);
-        return view('etudiant.show',['etudiant' => $etudiant, 'ville' => $ville]);
+        return view('etudiant.show',['etudiant' => $etudiant]);
     }
 
     /**
@@ -86,12 +85,12 @@ class EtudiantController extends Controller
      */
     public function update(Request $request, Etudiant $etudiant)
     {
-        $etudiant = Etudiant::create([
+        $etudiant->update([
             'name' => $request->name,
             'email'  => $request->email,
             'phone' => $request->phone,
             'adress' => $request->adress,
-            'date_of_birth' =>$request->date_of_birth,
+            'date_of_birth' => $request->date_of_birth,
             'ville_id' => $request->ville
         ]);
         return redirect(route('etudiant.show', $etudiant->id));
