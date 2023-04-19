@@ -1,0 +1,26 @@
+.post{
+    background-color: var(--lightBg);
+    border-radius: 5px;
+}
+
+.post__header{
+    background-color: var(--lighterBg);
+}
+
+.post__topHeader{
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post__header,
+.post__content,
+.post__footer{
+    color: white;
+    padding: 0.75em 1em;
+}
+
+.post span{
+    font-size: 0.5em;
+}

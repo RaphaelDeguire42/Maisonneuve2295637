@@ -1,0 +1,8 @@
+.forum{
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    margin: 0 25vw;
+    padding: 3em 0;
+    color: white;
+}

@@ -1,0 +1,19 @@
+.nav{
+    display: flex;
+    background-color: var(--lighterBg);
+    padding: 1em 2.5vw;
+    color: white;
+}
+
+.nav__right{
+
+
+}
+
+.nav__greetings{
+    color: white;
+}
+
+.nav__greetings:first-child{
+    font-size: 1.25em;
+}

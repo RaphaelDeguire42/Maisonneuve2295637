@@ -20,4 +20,8 @@ class Etudiant extends Model
     public function etudiantHasVille(){
         return $this->hasOne('App\Models\Ville', 'id', 'ville_id');
     }
+
+    public function user(){
+        return $this->hasOne(User::class);
+    }
 }

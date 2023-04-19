@@ -1,0 +1,32 @@
+<?php
+//EN
+return [
+    'text_hello' => 'Hello',
+    'text_guest' => 'guest',
+    'text_login' => 'Login',
+    'text_logout' => 'Logout',
+    'text_register' => 'Registration',
+    'text_name' => 'Name',
+    'text_email' => 'Email',
+    'text_password' => 'Password',
+    'text_save' => 'Save',
+    'text_delete' => 'Delete',
+    'text_create' => 'Post',
+    'text_edit' => 'Edit',
+    'text_french' => "Fr",
+    'text_english' => "En",
+    'text_successDelete' => 'Post deleted.',
+    'text_forumTitle' => "The student forum",
+    'text_studentList' => 'Student List',
+    'text_addStudent' => 'Add a student',
+    'text_goback' => 'Go back',
+    'text_noStudent' => 'No student a this time...',
+    'text_noPost' => 'No post a this time...',
+    'text_createPost' => 'New Post',
+    'text_editPost' => 'Edit Post',
+    'language' => 'Language',
+    'title' => 'Title',
+    'fr' => 'French',
+    'en' => 'English',
+];
+?>
