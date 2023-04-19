@@ -6,16 +6,18 @@
 @import url('table.css');
 @import url('nav.css');
 @import url('button.css');
+@import url('utils.css');
 
 :root{
-        /* Light Theme */
-        --bgColor: rgb(237, 237, 237);
-        --lighterBg: rgb(132, 132, 132);
-        --lightBg: rgb(174, 174, 174);
-        --textColor: black;
-        --textColorInvert: white;
-        --linkBlue: #0545be;
-        --linkBlueHover: #2664d8;
+    /* Light Theme */
+    --bgColor: rgb(237, 237, 237);
+    --lighterBg: rgb(132, 132, 132);
+    --lightBg: rgb(174, 174, 174);
+    --textColor: black;
+    --textColorInvert: white;
+    --linkBlue: #0545be;
+    --linkBlueHover: #2664d8;
+
     /* Dark Theme */
     --bgColor: rgb(31, 31, 31);
     --lighterBg: rgb(75, 74, 74);
@@ -28,13 +30,15 @@
 
 
     --buttonPrimary:rgb(89, 89, 249);
-    --buttonHover: rgb(74, 74, 255);
+    --buttonHover: rgb(89, 89, 250);
     --buttonSec: rgb(209, 30, 30);
     --buttonSecHover:rgb(247, 40, 40);
     --glowColor: #2c8eff;
     --accentPurple: rgb(105, 62, 148);
     --darkerPurple: rgb(77, 37, 118);
+    
     --buttonPadding: 0.4em 0.75em;
+    --btnShadow: 0 4px 9px -4px;
 }
 
 *{
@@ -75,32 +79,11 @@ a:not('.button'):hover{
 }
 
 
-/*	Making the form responsive. Remove this media query
-    if you don't need the form to work on mobile devices. */
-
-
-.glow{
-    box-shadow: 0 0 20px -10px var(--glowColor);
-}
-
-.action{
-    display: flex;
-    justify-content: space-around;
-    align-items: baseline;
-    gap: 0.5em;
-}
-
-
 textarea{
     height: 5em;
     width: 36ch;
     padding: 12px 18px;
 }
-
-.alert{
-    color: green;
-}
-
 
 a{
     text-decoration: none;
@@ -115,8 +98,6 @@ ul{
     list-style-type: none;
     padding: 0;
 }
-
-
 
 header{
     max-width: 100vw;
@@ -133,11 +114,6 @@ form .action{
     margin: 0.5em 0;
 }
 
-.adress{
-    max-width: 20ch;
-    text-align: end;
-}
-
 .titleHeading{
     text-align: center;
     background-color: var(--accentPurple);
@@ -149,9 +125,5 @@ form .action{
     background-color: var(--darkerPurple);
     padding: var(--buttonPadding);
     border-radius: 3px;
-    color: var(--textColorInvert);
-}
-
-.linkBlue{
-    color: var(--linkBlue);
+    color: var(--textColor);
 }

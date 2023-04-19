@@ -1,0 +1,23 @@
+.linkBlue{
+   color: var(--linkBlue);
+}
+
+.adress{
+   max-width: 20ch;
+   text-align: end;
+}
+
+.glow{
+   box-shadow: 0 0 20px -10px var(--glowColor);
+}
+
+.action{
+   display: flex;
+   justify-content: space-around;
+   align-items: baseline;
+   gap: 0.5em;
+}
+
+.alert{
+   color: green;
+}

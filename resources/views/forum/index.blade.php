@@ -9,7 +9,7 @@
     <div class="forum">
     <div class="titleHeading">
         <h1>@lang('lang.text_forumTitle')</h1>
-        <a href="{{ route('forum.create') }}" class="button button--black">@lang('lang.text_createPost')</a>
+        <a href="{{ route('forum.create') }}" class="button button--black button--glow">@lang('lang.text_createPost')</a>
     </div>
     @forelse ($posts as $post)
         <div class="post">
