@@ -1,0 +1,19 @@
+.heading{
+   text-align: center;
+   min-width: 450px;
+   background-color: var(--accentPurple);
+   padding: 1em;
+   border-radius: 4px;
+   color: var(--textColorInvert);
+}
+
+.heading a{
+   background-color: var(--darkerPurple);
+   padding: var(--buttonPadding);
+   border-radius: 3px;
+   color: white;
+}
+
+.heading>*{
+   margin: 15px 0;
+}

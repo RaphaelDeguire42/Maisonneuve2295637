@@ -8,7 +8,7 @@ button:hover{
    background-color: var(--buttonPrimary);
    box-shadow: var(--btnShadow) var(--buttonPrimary) ;
    padding: var(--buttonPadding);
-   border-radius: 5px;
+   border-radius: 3px;
    border: none;
 }
 
@@ -27,12 +27,14 @@ button:hover{
 }
 
 .button--neutral,.button--black,a.button.button--neutral{
+   box-shadow: var(--btnShadow) var(--bgColor) ;
    background-color: var(--bgColor);
 }
 
 a.button.button--neutral:hover,
 .button--neutral:hover{
-   background-color: var(--lighterBg);
+   background-color: var(--textColor);
+   color: var(--textColorInvert);
    cursor: pointer;
 }
 
@@ -47,12 +49,12 @@ a.button.button--neutral:hover,
 
 .button--black{
    padding: var(--buttonPadding);
-   box-shadow: var(--btnShadow) black;
+   box-shadow: var(--btnShadow) var(--textColorInvert);
 }
 
 .button--black:hover{
-   background-color: black;
-   color: white;
+   background-color: var(--textColor);
+   color: var(--textColorInvert);
 }
 
 .button--glow{

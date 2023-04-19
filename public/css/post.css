@@ -1,6 +1,7 @@
 .post{
     background-color: var(--lightBg);
-    border-radius: 5px;
+    border-radius: 1px;
+    outline: 2px var(--darkerPurple) solid;
 }
 
 .post__header{

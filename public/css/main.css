@@ -6,37 +6,15 @@
 @import url('table.css');
 @import url('nav.css');
 @import url('button.css');
+@import url('heading.css');
 @import url('utils.css');
+@import url('light-theme.css');
 
 :root{
-    /* Light Theme */
-    --bgColor: rgb(237, 237, 237);
-    --lighterBg: rgb(132, 132, 132);
-    --lightBg: rgb(174, 174, 174);
-    --textColor: black;
-    --textColorInvert: white;
-    --linkBlue: #0545be;
-    --linkBlueHover: #2664d8;
 
-    /* Dark Theme */
-    --bgColor: rgb(31, 31, 31);
-    --lighterBg: rgb(75, 74, 74);
-    --lightBg: rgb(58 58 58);
-    --textColor: white;
-    --textColorInvert: black;
-    --linkBlue: #94baff;
-    --linkBlueHover: #b3ccfc;
-
-
-
-    --buttonPrimary:rgb(89, 89, 249);
-    --buttonHover: rgb(89, 89, 250);
-    --buttonSec: rgb(209, 30, 30);
-    --buttonSecHover:rgb(247, 40, 40);
     --glowColor: #2c8eff;
-    --accentPurple: rgb(105, 62, 148);
-    --darkerPurple: rgb(77, 37, 118);
-    
+
+
     --buttonPadding: 0.4em 0.75em;
     --btnShadow: 0 4px 9px -4px;
 }
@@ -56,27 +34,6 @@ p{
     margin: 0;
 }
 
-a:not('.button'):hover{
-    color :var(--linkBlueHover);
-}
-
-.spacer{
-    flex-grow: 1;
-    width: 55vw;
-}
-.navbar{
-    background-color: var(--lighterBg);
-    display: flex;
-    width: 100%;
-}
-
-.lightText{
-    color: white;
-}
-
-.active{
-
-}
 
 
 textarea{
@@ -90,7 +47,7 @@ a{
     color: var(--textColor);
 }
 
-a:hover{
+.nav a:not(".button"):hover{
     color: var(--linkBlueHover);
 }
 
@@ -112,18 +69,4 @@ header{
 header>*,
 form .action{
     margin: 0.5em 0;
-}
-
-.titleHeading{
-    text-align: center;
-    background-color: var(--accentPurple);
-    padding: 1em;
-    border-radius: 5px;
-}
-
-.titleHeading a{
-    background-color: var(--darkerPurple);
-    padding: var(--buttonPadding);
-    border-radius: 3px;
-    color: var(--textColor);
 }

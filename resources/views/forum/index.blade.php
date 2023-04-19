@@ -7,7 +7,7 @@
     </div>
     @endif
     <div class="forum">
-    <div class="titleHeading">
+    <div class="heading">
         <h1>@lang('lang.text_forumTitle')</h1>
         <a href="{{ route('forum.create') }}" class="button button--black button--glow">@lang('lang.text_createPost')</a>
     </div>

@@ -1,5 +1,5 @@
 .linkBlue{
-   color: var(--linkBlue);
+   color: var(--mdb-link-color);
 }
 
 .adress{
@@ -20,4 +20,22 @@
 
 .alert{
    color: green;
+}
+
+.spacer{
+   flex-grow: 1;
+   width: 55vw;
+}
+.navbar{
+   background-color: var(--lighterBg);
+   display: flex;
+   width: 100%;
+}
+
+.lightText{
+   color: white;
+}
+
+.active{
+   font-weight: bold;
 }

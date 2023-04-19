@@ -3,10 +3,12 @@
 @section('content')
 
 <div class="wrapper table">
-    <h1 class="table__title">@lang('lang.text_studentList')</h1>
-    <div class="action">
-        <a href="{{ route('etudiant.index') }}" type="button" class="button button--neutral">@lang('lang.text_goback')</a>
-        <a href="{{ route('etudiant.create') }}" class="button button--neutral">@lang('lang.text_addStudent')</a>
+    <div class="heading">
+        <h1 class="table__title">@lang('lang.text_studentList')</h1>
+        <div class="action">
+            <a href="{{ route('etudiant.index') }}" type="button" class="button button--neutral">@lang('lang.text_goback')</a>
+            <a href="{{ route('etudiant.create') }}" class="button button--neutral">@lang('lang.text_addStudent')</a>
+        </div>
     </div>
 
     <!-- Retour de succes si l'étudiant est bien supprimé -->
