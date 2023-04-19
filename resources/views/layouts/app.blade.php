@@ -32,9 +32,9 @@
         @guest
             <a class=" " href="{{route('login')}}">@lang('lang.text_login')</a>
         @else
-            <a class=" " href="{{route('etudiant.index')}}">@lang('lang.text_studentList')</a>
-            <a class=" " href="{{route('forum.index')}}">Forum</a>
-            <a class=" " href="{{route('logout')}}">@lang('lang.text_logout')</a>
+            <a class=" " href="{{route('etudiant.index')}}">@lang('lang.text_studentList')</a> |
+            <a class=" " href="{{route('forum.index')}}">Forum</a> -
+            <a class="button button--black" href="{{route('logout')}}">@lang('lang.text_logout')</a>
         @endguest
         </div>
     </nav>

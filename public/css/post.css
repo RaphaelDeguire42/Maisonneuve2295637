@@ -17,7 +17,7 @@
 .post__header,
 .post__content,
 .post__footer{
-    color: white;
+    color: var(--textColor);
     padding: 0.75em 1em;
 }
 

@@ -8,7 +8,7 @@
 
 .table>*{
     margin: 7px 0;
-    color: white;
+    color: var(--textColor);
 }
 
 .table__title{

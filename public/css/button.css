@@ -1,0 +1,53 @@
+
+button:hover{
+   cursor: pointer;
+}
+
+.button{
+   color: var(--textColor);
+   background-color: var(--buttonPrimary);
+   padding: var(--buttonPadding);
+   border-radius: 5px;
+   border: none;
+}
+
+.button:hover{
+   background-color: var(--buttonHover);
+   cursor: pointer;
+}
+
+.button--info{
+   background-color: #2cffd1;
+   color: black;
+}
+
+.button--info:hover{
+   background-color: #2cffae;
+}
+
+.button--neutral,.button--black,a.button.button--neutral{
+   background-color: var(--bgColor);
+}
+
+a.button.button--neutral:hover,
+.button--neutral:hover{
+   background-color: var(--lighterBg);
+   cursor: pointer;
+}
+
+.button--delete{
+   background-color: var(--buttonSec) !important;
+}
+
+.button--delete:hover{
+   background-color: var(--buttonSecHover);
+}
+
+.button--black{
+   padding: var(--buttonPadding);
+}
+
+.button--black:hover{
+   background-color: black;
+   color: white;
+}

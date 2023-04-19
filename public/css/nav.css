@@ -2,16 +2,22 @@
     display: flex;
     background-color: var(--lighterBg);
     padding: 1em 2.5vw;
-    color: white;
+    color: var(--textColor);
 }
 
-.nav__right{
+.nav a:hover{
+    color: var(--linkBlue);
+}
 
-
+.nav__right,
+.nav__left{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
 }
 
 .nav__greetings{
-    color: white;
+    color: var(--textColor);
 }
 
 .nav__greetings:first-child{
