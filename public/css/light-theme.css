@@ -1,24 +1,36 @@
+:root{
+  /* Dark Theme */
+  --bgColor: #ededed;
+  --lightBg: #bbbbbb;
+  --lighterBg: #959595;
 
-        :root{
-        /* Dark Theme */
-        --bgColor: #ededed;
-        --lightBg: #bbbbbb;
-        --lighterBg: #959595;
+  --textColor: black;
+  --textColorInvert: white;
 
-        --textColor: black;
-        --textColorInvert: white;
+  --linkBlue: #0545be;
+  --linkBlueHover: #2664d8;
 
-        --linkBlue: #0545be;
-        --linkBlueHover: #2664d8;
+  --mdb-link-color: #0545be;
+  --mdb-link-hover-color: #0f3a8a;
 
-        --mdb-link-color: #0545be;
-        --mdb-link-hover-color: #0f3a8a;
+  --accentPurple: #464D77;
+  --darkerPurple: #302F4D;
 
-        --accentPurple: #464D77;
-        --darkerPurple: #302F4D;
+  --buttonPrimary: #788dc9;
+  --buttonHover: #839bdd;
+  --buttonSec: rgb(235 41 41);
+  --buttonSecHover:rgb(247, 40, 40);
+}
 
-        --buttonPrimary: #788dc9;
-        --buttonHover: #839bdd;
-        --buttonSec: rgb(209, 30, 30);
-        --buttonSecHover:rgb(247, 40, 40);
-        }
+
+.toggleDarkMode img{
+  transition: filter 0.5s ease;
+}
+
+.toggleDarkMode img:hover{
+  filter: invert(1);
+}
+
+.linkBlue{
+  color: var(--mdb-link-color);
+}

@@ -69,7 +69,6 @@ class UserController extends Controller
             'password' => 'required'
         ]);
 
-
         $credentials = $request->only('email', 'password');
 
        if(!Auth::validate($credentials)):

@@ -1,21 +1,42 @@
+:root{
+  /* Dark Theme */
+  --bgColor: rgb(31, 31, 31);
+  --lighterBg: rgb(75, 74, 74);
+  --lightBg: rgb(58 58 58);
+  --textColor: white;
+  --textColorInvert: black;
+  --linkBlue: #94baff;
+  --linkBlueHover: #b3ccfc;
 
-        :root{
-        /* Dark Theme */
-        --bgColor: rgb(31, 31, 31);
-        --lighterBg: rgb(75, 74, 74);
-        --lightBg: rgb(58 58 58);
-        --textColor: white;
-        --textColorInvert: black;
-        --linkBlue: #94baff;
-        --linkBlueHover: #b3ccfc;
+  --mdb-link-color: #76aaff;
+  --mdb-link-hover-color: #b3d0ff;
 
-        --mdb-link-color: #76aaff;
-        --mdb-link-hover-color: #b3d0ff;
+  --accentPurple: rgb(105, 62, 148);
+  --darkerPurple: rgb(77, 37, 118);
+  --buttonPrimary:rgb(89, 89, 249);
+  --buttonHover: rgb(89, 89, 250);
+  --buttonSec: rgb(209, 30, 30);
+  --buttonSecHover:rgb(247, 40, 40);
+}
 
-        --accentPurple: rgb(105, 62, 148);
-        --darkerPurple: rgb(77, 37, 118);
-        --buttonPrimary:rgb(89, 89, 249);
-        --buttonHover: rgb(89, 89, 250);
-        --buttonSec: rgb(209, 30, 30);
-        --buttonSecHover:rgb(247, 40, 40);
-        }
+.toggleDarkMode img{
+  transition: filter 0.5s ease;
+  filter: invert(1);
+}
+
+.toggleDarkMode img:hover{
+  filter: invert(0);
+}
+
+
+.linkBlue{
+  color: #76aaff;
+}
+
+.linkBlue:hover{
+  color: #b3ccfc;
+}
+
+.whiteText{
+  color: white;
+}

@@ -9,10 +9,8 @@
     @endif
     <div class="forum">
     <div>
-        <h1>@lang('lang.text_forumTitle')</h1>
         <div class='action'>
             <a href="{{ route('forum.index') }}" type="button" class="button button--neutral">@lang('lang.text_goback')</a>
-            <a href="{{ route('forum.create') }}" class="button button--neutral">@lang('lang.text_createPost')</a>
         </div>
     </div>
         <div class="post">
@@ -22,7 +20,7 @@
                     <span>{{$forum->created_at}}</span>
                 </div>
                 <div class="post__bottomHeader">
-                    <p>Par : {{$forum->postHasAuthor->name}}</p>
+                    <p>@lang('lang.text_by') : {{$forum->postHasAuthor->name}}</p>
                 </div>
             </div>
             <div class="post__content">

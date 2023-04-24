@@ -6,11 +6,11 @@
 <div class="wrapper table">
     <h2>{{ $etudiant->name }}</h2>
     <div class="table__content info">
-        <p class="table__row">Date de naissance: <span class="info__data">{{ $etudiant->date_of_birth }}</span></p>
-        <p class="table__row">Téléphone: <span class="info__data">{{ $etudiant->phone }}</span></p>
-        <p class="table__row">Courriel: <span class="info__data">{{ $etudiant->email }}</span></p>
-        <p class="table__row">Adresse: <span class="info__data adress">{{ $etudiant->adress }}</span></p>
-        <p class="table__row">Ville: <span class="info__data">{{ $etudiant->etudiantHasVille->name}}</span></p>
+        <p class="table__row">@lang('lang.text_dateOfBirth'): <span class="info__data">{{ $etudiant->date_of_birth }}</span></p>
+        <p class="table__row">@lang('lang.text_phone'): <span class="info__data">{{ $etudiant->phone }}</span></p>
+        <p class="table__row">@lang('lang.text_email'): <span class="info__data">{{ $etudiant->email }}</span></p>
+        <p class="table__row">@lang('lang.text_adress'): <span class="info__data adress">{{ $etudiant->adress }}</span></p>
+        <p class="table__row">@lang('lang.text_city'): <span class="info__data">{{ $etudiant->etudiantHasVille->name}}</span></p>
     </div>
     <div class="action">
         <a href="{{ route('etudiant.index') }}" type="button" class="button button--neutral">Retour</a>
@@ -22,3 +22,4 @@
 </div>
 
 @endsection('content')
+

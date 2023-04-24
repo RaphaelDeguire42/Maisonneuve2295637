@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ForumController;
+use App\Http\Controllers\FileRepoController;
 use App\Http\Controllers\LocalizationController;
 
 
@@ -46,18 +47,30 @@ Route::get('logout', [UserController::class, 'logout'])->name('logout');
  * Forum
  */
 Route::get('/', [ForumController::class, 'index'])->name('forum.index')->middleware('auth');
-// Show one student by id
-Route::get('/forum/{forum}', [ForumController::class, 'show'])->name('forum.show');
-// Create new student
-Route::get('/create-forum', [ForumController::class, 'create'])->name('forum.create');
+// Show one post by id
+Route::get('/forum/{forum}', [ForumController::class, 'show'])->name('forum.show')->middleware('auth');
+// Create new post
+Route::get('/create-forum', [ForumController::class, 'create'])->name('forum.create')->middleware('auth');
 Route::post('/create-forum', [ForumController::class, 'store']);
-// Update a student by id
-Route::get('/edit-forum/{forum}', [ForumController::class, 'edit'])->name('forum.edit');
+// Update a post by id
+Route::get('/edit-forum/{forum}', [ForumController::class, 'edit'])->name('forum.edit')->middleware('auth');
 Route::put('/edit-forum/{forum}', [ForumController::class, 'update']);
-// Delete a student
-Route::delete('/delete-forum/{forum}', [ForumController::class, 'destroy'])->name('forum.destroy');
+// Delete a post
+Route::delete('/delete-forum/{forum}', [ForumController::class, 'destroy'])->name('forum.destroy')->middleware('auth');
 
 
+/**
+ * File Repository
+ */
+Route::get('/fileRepo', [FileRepoController::class, 'index'])->name('fileRepo.index')->middleware('auth');
+// Create new file
+Route::get('/create-fileRepo', [FileRepoController::class, 'create'])->name('fileRepo.create')->middleware('auth');
+Route::post('/create-fileRepo', [FileRepoController::class, 'store'])->name('fileRepo.store');
+// Update a file by id
+Route::get('/edit-fileRepo/{fileRepo}', [FileRepoController::class, 'edit'])->name('fileRepo.edit')->middleware('auth');
+Route::put('/edit-fileRepo/{fileRepo}', [FileRepoController::class, 'update']);
+// Delete a file
+Route::delete('/delete-fileRepo/{fileRepo}', [FileRepoController::class, 'destroy'])->name('fileRepo.destroy')->middleware('auth');
 
 
 // Localization

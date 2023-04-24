@@ -40,12 +40,19 @@ class ForumController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+            'langue_id' => 'required|exists:langues,id'
+        ]);
+
         $forum = Forum::create([
             'title' => $request->title,
             'content'  => $request->content,
-            'langue_id' => $request->language,
-            'etudiant_id' =>  Auth::user()->id
+            'langue_id' => $request->langue_id,
+            'etudiant_id' =>  session('user_id')
         ]);
+
         return redirect(route('forum.show', $forum->id));
     }
 
@@ -68,7 +75,7 @@ class ForumController extends Controller
      */
     public function edit(Forum $forum)
     {
-        if($forum->etudiant_id != Auth::user()->id){
+        if($forum->etudiant_id != session('user_id')){
             return redirect(route('forum.show', $forum->id));
         }
         $langues = Langue::langueSelect();
@@ -88,11 +95,17 @@ class ForumController extends Controller
      */
     public function update(Request $request, Forum $forum)
     {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+            'language' => 'required|exists:langues,id'
+        ]);
+
         $forum->update([
             'title' => $request->title,
             'content'  => $request->content,
             'langue_id' => $request->language,
-            'etudiant_id' =>  Auth::user()->id
+            'etudiant_id' =>  session('user_id')
         ]);
         return redirect(route('forum.show', $forum->id));
     }
@@ -106,6 +119,6 @@ class ForumController extends Controller
     public function destroy(Forum $forum)
     {
         $forum->delete();
-        return redirect()->route('forum.index')->with('success', 'Deleted !');
+        return redirect()->route('forum.index')->with('success', trans('lang.text_postDeleted'));
     }
 }

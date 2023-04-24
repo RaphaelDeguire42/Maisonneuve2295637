@@ -1,9 +1,6 @@
 @extends('layouts/app')
-@section('title', trans('lang.text_editPost'))
+@section('title', trans('lang.text_createFile'))
 @section('content')
-@php
-    $lang= $forum->langue_id;
-@endphp
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -13,22 +10,22 @@
         </ul>
     </div>
 @endif
- <form class="form-labels-on-top" method="post" action="#">
+
+ <form class="form-labels-on-top" method="post" enctype="multipart/form-data" action="{{ route('fileRepo.store') }}">
     @csrf
-    @method('put')
     <div class="form-title-row">
-        <h1>{{trans('lang.text_editPost')}}</h1>
+        <h1>{{trans('lang.text_createFile')}}</h1>
     </div>
     <div class="form-row">
         <label for="title">
             <span>@lang('lang.title')</span>
-            <input type="text" id="title" name="title" value="{{$forum->title}}" required>
+            <input type="text" id="title" name="title" required>
         </label>
     </div>
     <div class="form-row">
-        <label for="content">
-            <span>Message</span>
-            <textarea name="content">{{$forum->content}}"</textarea>
+        <label for="file">
+            <span>@lang('lang.text_file') (.pdf, .doc, .zip)</span>
+            <input type="file" name="file">
         </label>
     </div>
     <div class="form-row">
@@ -36,14 +33,14 @@
             <span>@lang('lang.language')</span>
             <select name="language" id="language" required>
                 @foreach ($langues as $langue)
-                    <option value="{{ $langue->id }}" @php if($lang == $langue->id) echo 'selected'; @endphp >{{ $langue->langue }}</option>
+                    <option value="{{ $langue->id }}">{{ $langue->langue }}</option>
                 @endforeach
             </select>
         </label>
     </div>
     <div class="form-row">
-        <a href="{{ route('forum.index') }}" class="button button--neutral">@lang('lang.text_goback')</a>
-        <button type="submit" class="button">@lang('lang.text_create')</button>
+        <a href="{{ route('fileRepo.index') }}" class="button button--neutral">@lang('lang.text_goback')</a>
+        <button type="submit" class="button" name="uploadFile">@lang('lang.text_create')</button>
     </div>
 </form>
 

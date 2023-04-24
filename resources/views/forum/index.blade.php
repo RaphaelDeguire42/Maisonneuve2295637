@@ -8,7 +8,7 @@
     @endif
     <div class="forum">
     <div class="heading">
-        <h1>@lang('lang.text_forumTitle')</h1>
+        <h1 class="whiteText">@lang('lang.text_forumTitle')</h1>
         <a href="{{ route('forum.create') }}" class="button button--black button--glow">@lang('lang.text_createPost')</a>
     </div>
     @forelse ($posts as $post)
@@ -19,7 +19,7 @@
                     <span class="linkBlue">{{$post->created_at}}</span>
                 </div>
                 <div class="post__bottomHeader">
-                    <a href="{{ route('etudiant.show', $post->postHasAuthor->id ) }}" class="linkBlue">Par : {{$post->postHasAuthor->name}}</a>
+                    <a href="{{ route('etudiant.show', $post->postHasAuthor->id ) }}" class="linkBlue">@lang('lang.text_by') : {{$post->postHasAuthor->name}}</a>
                 </div>
             </div>
             <div class="post__content">

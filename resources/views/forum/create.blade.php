@@ -1,6 +1,15 @@
 @extends('layouts/app')
 @section('title', trans('lang.text_createPost'))
 @section('content')
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
  <form class="form-labels-on-top" method="post" action="#">
     @csrf
     <div class="form-title-row">
@@ -19,9 +28,9 @@
         </label>
     </div>
     <div class="form-row">
-        <label for="language">
+        <label for="langue_id">
             <span>@lang('lang.language')</span>
-            <select name="language" id="language" required>
+            <select name="langue_id" id="langue_id" required>
                 @foreach ($langues as $langue)
                     <option value="{{ $langue->id }}">{{ $langue->langue }}</option>
                 @endforeach

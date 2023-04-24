@@ -5,21 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Forum extends Model
+class FileRepo extends Model
 {
     use HasFactory;
     protected $fillable = [
         'title',
-        'content',
-        'langue_id',
+        'path',
+        'language',
         'etudiant_id'
     ];
 
-    public function postHasAuthor(){
+    public function fileHasStudent(){
         return $this->hasOne('App\Models\Etudiant', 'id', 'etudiant_id');
     }
 
-    public function postHasLangue(){
+    public function fileHasLangue(){
         return $this->hasOne('App\Models\Langue', 'id', 'langue_id');
     }
 }

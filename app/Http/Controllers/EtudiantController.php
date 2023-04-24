@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Etudiant;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Ville;
+use Illuminate\Support\Facades\Hash;
 
 class EtudiantController extends Controller
 {
@@ -38,6 +40,16 @@ class EtudiantController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:etudiants',
+            'phone' => 'required|string|max:20',
+            'adress' => 'required|string|max:255',
+            'date_of_birth' => 'required|date',
+            'ville' => 'required|exists:villes,id',
+            'password' => 'required|max:20|min:6|confirmed'
+        ]);
+
         $etudiant = Etudiant::create([
             'name' => $request->name,
             'email'  => $request->email,
@@ -46,6 +58,14 @@ class EtudiantController extends Controller
             'date_of_birth' =>$request->date_of_birth,
             'ville_id' => $request->ville
         ]);
+
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->etudiant_id = $etudiant->id;
+        $user->save();
+
         return redirect(route('etudiant.show', $etudiant->id));
     }
 
@@ -85,6 +105,15 @@ class EtudiantController extends Controller
      */
     public function update(Request $request, Etudiant $etudiant)
     {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:etudiants',
+            'phone' => 'required|string|max:20',
+            'adress' => 'required|string|max:255',
+            'date_of_birth' => 'required|date',
+            'ville' => 'required|exists:villes,id',
+        ]);
+
         $etudiant->update([
             'name' => $request->name,
             'email'  => $request->email,
@@ -104,7 +133,8 @@ class EtudiantController extends Controller
      */
     public function destroy(Etudiant $etudiant)
     {
+
         $etudiant->delete();
-        return redirect()->route('etudiant.index')->with('success', 'Étudiant supprimé avec succès.');
+        return redirect()->route('etudiant.index')->with('success', trans('lang.text_studentDeleted'));
     }
 }

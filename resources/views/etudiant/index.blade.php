@@ -1,23 +1,18 @@
 @extends('layouts/app')
-@section('title', 'Liste des étudiants')
+@section('title', trans('lang.text_studentList'))
 @section('content')
 
-<div class="wrapper table">
+<div class="table">
     <div class="heading">
-        <h1 class="table__title">@lang('lang.text_studentList')</h1>
-        <div class="action">
-            <a href="{{ route('etudiant.index') }}" type="button" class="button button--neutral">@lang('lang.text_goback')</a>
-            <a href="{{ route('etudiant.create') }}" class="button button--neutral">@lang('lang.text_addStudent')</a>
-        </div>
+        <h1 class="whiteText">@lang('lang.text_studentList')</h1>
+        <a href="{{ route('etudiant.create') }}" class="button button--black button--glow">@lang('lang.text_createStudent')</a>
     </div>
-
     <!-- Retour de succes si l'étudiant est bien supprimé -->
     @if(session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
     </div>
     @endif
-
     <ul class="table__content">
         @forelse ($etudiants as $etudiant)
         <li class="table__row">
